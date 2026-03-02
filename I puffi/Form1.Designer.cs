@@ -34,7 +34,8 @@
             panel1 = new Panel();
             puffo1 = new Panel();
             inizia = new Button();
-            Punteggio = new Label();
+            Punteggio1 = new Label();
+            Punteggio2 = new Label();
             Background.SuspendLayout();
             SuspendLayout();
             // 
@@ -85,22 +86,33 @@
             inizia.UseVisualStyleBackColor = true;
             inizia.Click += inizia_Click;
             // 
-            // Punteggio
+            // Punteggio1
             // 
-            Punteggio.AutoSize = true;
-            Punteggio.Location = new Point(1151, 4);
-            Punteggio.Name = "Punteggio";
-            Punteggio.Size = new Size(97, 15);
-            Punteggio.TabIndex = 2;
-            Punteggio.Text = "Punteggio puffo:";
-            Punteggio.Visible = false;
+            Punteggio1.AutoSize = true;
+            Punteggio1.Location = new Point(1151, 4);
+            Punteggio1.Name = "Punteggio1";
+            Punteggio1.Size = new Size(97, 15);
+            Punteggio1.TabIndex = 2;
+            Punteggio1.Text = "Punteggio puffo:";
+            Punteggio1.Visible = false;
+            // 
+            // Punteggio2
+            // 
+            Punteggio2.AutoSize = true;
+            Punteggio2.Location = new Point(189, 4);
+            Punteggio2.Name = "Punteggio2";
+            Punteggio2.Size = new Size(128, 15);
+            Punteggio2.TabIndex = 3;
+            Punteggio2.Text = "Punteggio Gargamella:";
+            Punteggio2.Visible = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1575, 749);
-            Controls.Add(Punteggio);
+            Controls.Add(Punteggio2);
+            Controls.Add(Punteggio1);
             Controls.Add(inizia);
             Controls.Add(Background);
             KeyPreview = true;
@@ -117,7 +129,8 @@
         private Panel puffo1;
         private Button inizia;
         private Panel panel1;
-        private Label Punteggio;
+        private Label Punteggio1;
         private Panel Casa;
+        private Label Punteggio2;
     }
 }

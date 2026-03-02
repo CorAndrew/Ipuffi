@@ -8,6 +8,7 @@ namespace I_puffi
     {
         int velocita = 10;
         int punti = 0;
+        int puntiGargamella = 0;
         Random rnd = new Random();
 
         public struct punto
@@ -36,9 +37,16 @@ namespace I_puffi
         {
             if (panel1.Bounds.IntersectsWith(Casa.Bounds))
             {
-                Punteggio.Visible = true;
                 punti++;
-                Punteggio.Text = "Punteggio puffo: " + punti;
+                Punteggio1.Visible = true;
+                Punteggio1.Text = "Punteggi Puffo: " + punti;
+                PosizionaCasaCasuale();
+            }
+            else if (puffo1.Bounds.IntersectsWith(Casa.Bounds))
+            {
+                puntiGargamella++;
+                Punteggio2.Visible = true;
+                Punteggio2.Text = "Punteggio Gargamella: " + puntiGargamella;
                 PosizionaCasaCasuale();
             }
         }
@@ -58,6 +66,19 @@ namespace I_puffi
                     break;
                 case Keys.D:
                     if (panel1.Right < this.ClientSize.Width) panel1.Left += velocita;
+                    break;
+
+                case Keys.I:
+                    if (puffo1.Top > 0) puffo1.Top -= velocita;
+                    break;
+                case Keys.K:
+                    if (puffo1.Bottom < this.ClientSize.Height) puffo1.Top += velocita;
+                    break;
+                case Keys.J:
+                    if (puffo1.Left > 0) puffo1.Left -= velocita;
+                    break;
+                case Keys.L:
+                    if (puffo1.Right < this.ClientSize.Width) puffo1.Left += velocita;
                     break;
             }
             ControllaCollisione();
